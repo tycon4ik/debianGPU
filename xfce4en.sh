@@ -7,6 +7,28 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# ============================================
+# AUTO-CLONE FUNCTION - copies script to root
+# ============================================
+SCRIPT_NAME="xfce4en"
+TERMUX_HOME="/data/data/com.termux/files/home"
+
+# Check if script is already in Termux root
+if [[ "$PWD" != "$TERMUX_HOME" ]] && [[ ! -f "$TERMUX_HOME/$SCRIPT_NAME" ]]; then
+    echo -e "${YELLOW}Copying script to Termux root ($TERMUX_HOME)...${NC}"
+    cp "$0" "$TERMUX_HOME/$SCRIPT_NAME"
+    chmod +x "$TERMUX_HOME/$SCRIPT_NAME"
+    echo -e "${GREEN}✓ Script copied to: $TERMUX_HOME/$SCRIPT_NAME${NC}"
+    echo -e "${GREEN}✓ You can run it from anywhere using: ~/$SCRIPT_NAME${NC}"
+elif [[ "$PWD" == "$TERMUX_HOME" ]]; then
+    echo -e "${GREEN}✓ Script is already in Termux root${NC}"
+else
+    echo -e "${GREEN}✓ Script already exists in Termux root${NC}"
+fi
+
+# ============================================
+# MAIN SCRIPT
+# ============================================
 echo -e "${GREEN}=== Launching XFCE on Debian with stack corruption workaround ===${NC}"
 
 # 1. Check if Debian is installed
