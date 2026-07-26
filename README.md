@@ -12,3 +12,10 @@ git clone https://github.com/tycon4ik/debianGPU.git && cd debianGPU && bash setu
 1.VirGL (mail/xclipse)
 2.Zink (snapdragon)
 3.No acceleration (stable, but slowly)
+
+**Running script auto-add to root termux**
+```bash
+./xfce4en.sh
+```
+
+Good luck!
