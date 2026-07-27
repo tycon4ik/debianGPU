@@ -9,7 +9,7 @@ git clone https://github.com/tycon4ik/debianGPU.git && cd debianGPU && bash setu
 **2.wait for installation (*proot-distro xfce4 mesa)***
 
 **3.choose GPU acceleration**
-1.VirGL (mail/xclipse)
+1.VirGL (mali/xclipse)
 2.Zink (snapdragon)
 3.No acceleration (stable, but slowly)
 
